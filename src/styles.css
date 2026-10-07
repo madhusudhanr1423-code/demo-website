@@ -1,0 +1,97 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: "Cormorant Garamond", "Noto Serif Telugu", Georgia, serif;
+  --font-sans: "Mukta", "Noto Sans Telugu", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-saffron: var(--saffron);
+  --color-saffron-foreground: var(--saffron-foreground);
+  --color-gold: var(--gold);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-warning: var(--warning);
+  --shadow-warm: var(--shadow-warm-v);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.975 0.018 85);
+  --foreground: oklch(0.26 0.06 25);
+  --card: oklch(0.99 0.01 85);
+  --card-foreground: oklch(0.26 0.06 25);
+  --popover: oklch(0.99 0.01 85);
+  --popover-foreground: oklch(0.26 0.06 25);
+  --primary: oklch(0.36 0.12 22);
+  --primary-foreground: oklch(0.97 0.02 85);
+  --secondary: oklch(0.94 0.035 80);
+  --secondary-foreground: oklch(0.36 0.12 22);
+  --muted: oklch(0.94 0.025 80);
+  --muted-foreground: oklch(0.48 0.05 40);
+  --accent: oklch(0.92 0.06 70);
+  --accent-foreground: oklch(0.36 0.12 22);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0.04 75);
+  --input: oklch(0.86 0.04 75);
+  --ring: oklch(0.7 0.17 55);
+  --saffron: oklch(0.72 0.18 55);
+  --saffron-foreground: oklch(0.22 0.06 30);
+  --gold: oklch(0.8 0.13 85);
+  --whatsapp: oklch(0.62 0.17 150);
+  --whatsapp-foreground: oklch(0.99 0 0);
+  --success: oklch(0.55 0.13 150);
+  --info: oklch(0.55 0.12 240);
+  --warning: oklch(0.72 0.15 75);
+  --shadow-warm-v: 0 10px 30px -12px oklch(0.5 0.15 40 / 0.35);
+  --gradient-hero: linear-gradient(135deg, oklch(0.3 0.11 22 / 0.92), oklch(0.45 0.15 35 / 0.75));
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; }
+}
+
+@utility bg-hero { background-image: var(--gradient-hero); }
+@utility prose-temple {
+  & p { margin-bottom: 1rem; line-height: 1.75; color: var(--muted-foreground); }
+  & h2 { font-size: 1.5rem; margin: 1.75rem 0 0.5rem; color: var(--primary); }
+}
+
+@media print {
+  header, footer, nav, [aria-label="Main"], a[href^="https://wa.me"] { display: none !important; }
+  body { background: white; }
+}
