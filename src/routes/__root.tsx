@@ -58,7 +58,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "[Temple Name] — Book Sacred Poojas Online" },
       { name: "description", content: "Book temple poojas for your family online and receive the pooja video." },
-      { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:title", content: "[Temple Name] — Book Sacred Poojas Online" },
+      { property: "og:description", content: "Book temple poojas for your family online and receive the pooja video." },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
